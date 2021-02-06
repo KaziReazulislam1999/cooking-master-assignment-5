@@ -1,0 +1,68 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background: #EDD263;
+}
+.container{
+    width: 1200px;
+    margin: 0 auto;
+}
+/* =================================
+           Header Section
+====================================*/
+
+.nav-area{
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+}
+.nav ul{
+    margin-top: 33px;
+}
+.nav ul li{
+    list-style: none;
+    display: inline-block;
+    padding: 10px 20px;
+    color: #4d0d4f;
+    font-weight:bold;
+    
+}
+/* =================================
+           Search Section
+====================================*/
+.search-area{
+    text-align: center;
+    margin-top: 40px;
+}
+input {
+    width: 350px;
+    padding: 15px 20px;
+    background: #fff;
+    border:none;
+    border-radius: 5px;
+    box-shadow: 0 10px 6px -6px #777;
+}
+input:focus {
+    outline:none;
+}
+.search-button{
+    padding:15px 20px;;
+    background: #4d0d4f;
+    color: #fff;
+    border-radius: 5px;
+    border: none;
+}
+
+/* =================================
+           Menu-Items Section
+====================================*/
+
+.items-cover,.items-cover img{
+    width: 250px;
+    display: inline-block;
+    margin-top: 50px;
+    margin-right:25px;
+}
