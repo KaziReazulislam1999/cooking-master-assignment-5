@@ -10,7 +10,6 @@ closeBtn.addEventListener("click", function () {
 
 searchBtn.addEventListener("click", function () {
   const input = inputValue.value;
-
   displayFoodItems(input);
 });
 
@@ -27,22 +26,27 @@ function singleItem(item) {
   menuItemsDiv.innerHTML = "";
 
   const getItems = item.meals;
-  getItems.forEach((meal) => {
-    const itemDiv = document.createElement("div");
-    itemDiv.className = "item";
-    const items = `
-            
+  if (getItems != null) {
+    getItems.forEach((meal) => {
+      const itemDiv = document.createElement("div");
+      itemDiv.className = "item";
+      const items = `
             <img src="${meal.strMealThumb}" width="300px" >
               <h3 class="items-heading">${meal.strMeal}</h3>
           `;
-    itemDiv.innerHTML = items;
-    menuItemsDiv.appendChild(itemDiv);
+      itemDiv.innerHTML = items;
+      menuItemsDiv.appendChild(itemDiv);
 
-    itemDiv.addEventListener("click", function () {
-      menuDetails.style.display = "flex";
-      itemsDetails(meal);
+      itemDiv.addEventListener("click", function () {
+        menuDetails.style.display = "flex";
+        itemsDetails(meal);
+      });
     });
-  });
+  } else {
+    const errorMessage = document.createElement("div");
+    errorMessage.innerHTML = `<h3 class ="error-message"> Sorry Your Items Is Not Available </h3>`;
+    menuItemsDiv.appendChild(errorMessage);
+  }
 }
 
 function itemsDetails(meal) {
