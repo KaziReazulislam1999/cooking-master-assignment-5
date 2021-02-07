@@ -8,17 +8,30 @@ searchBtn.addEventListener("click", function () {
   const displayMeals = (meals) => {
     const menueItemsDiv = document.getElementById("menue-items");
 
-    for (let i = 0; i < meals.length; i++) {
-      const meal = meals[i];
+    meals.forEach((meal) => {
       const itemDiv = document.createElement("div");
       itemDiv.className = "item";
       const items = `
-      <img src="${meal.strMealThumb}" width="300px" >
-        <h3 class="items-heading">${meal.strMeal}</h3>
-    `;
+        <img src="${meal.strMealThumb}" width="300px" >
+          <h3 class="items-heading">${meal.strMeal}</h3>
+      `;
       itemDiv.innerHTML = items;
 
       menueItemsDiv.appendChild(itemDiv);
-    }
+    });
+
+    // for (let i = 0; i < meals.length; i++) {
+    //   const meal = meals[i];
+
+    //   const itemDiv = document.createElement("div");
+    //   itemDiv.className = "item";
+    //   const items = `
+    //   <img src="${meal.strMealThumb}" width="300px" >
+    //     <h3 class="items-heading">${meal.strMeal}</h3>
+    // `;
+    //   itemDiv.innerHTML = items;
+
+    //   menueItemsDiv.appendChild(itemDiv);
+    // }
   };
 });
